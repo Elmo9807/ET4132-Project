@@ -1,5 +1,3 @@
-# ET4132-Project
-
 # ET4132 Project - Fantasy Dice Company
 
 ## Project Description
