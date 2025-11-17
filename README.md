@@ -29,7 +29,7 @@ Web application for fantasy-themed dice manufacturing company with MySQL databas
 3. **Import the database**
    - Open phpMyAdmin: http://localhost/phpmyadmin
    - Click "Import"
-   - Select `db_dicecompany.sql`
+   - Select `db_et4132_group1.sql`
    - Click "Go"
 
 4. **Test it works**
@@ -40,12 +40,10 @@ Web application for fantasy-themed dice manufacturing company with MySQL databas
 ```
 ET4132_Project/
 ├── index.html              - Homepage
-├── styles.css              - Shared stylesheet
+├── unifiedstyles.css       - Shared stylesheet
 ├── db_connect.php          - Database connection
-├── db_dicecompany.sql    - Database dump
+├── db_et4132_group1.sql    - Database dump
 ├── images/                 - Image assets
-├── view_*.php              - Display pages
-└── add_*.php               - Data entry pages
 ```
 
 ## Daily Workflow
@@ -65,7 +63,7 @@ git push origin main
 
 ### If you update the database structure:
 1. Export from phpMyAdmin
-2. Replace `db_dicecompany.sql`
+2. Replace `db_et4132_group1.sql`
 3. Commit with message: "Database updated - team please re-import!"
 4. Notify team in group chat
 

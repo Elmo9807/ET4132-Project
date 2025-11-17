@@ -1,0 +1,759 @@
+/* ============================================
+   FANTASY DICE COMPANY - UNIFIED STYLESHEET
+   ============================================ */
+
+/* ==========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   2. COLOR VARIABLES (Easy to change!)
+   ========================================== */
+
+:root {
+    --color-black: #000000;
+    --color-gold: #FFD700;
+    --color-emerald: #1a5c54;
+    --color-teal: #006666;
+    --color-white: #ffffff;
+    --color-dark-gray: #1a1a1a;
+    --color-light-gray: #2a2a2a;
+}
+
+/* ==========================================
+   3. NAVIGATION
+   ========================================== */
+
+.navbar-wrapper {
+    width: 100%;
+    border: 3px solid var(--color-gold);
+    background-color: var(--color-black);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-link {
+    padding: 6px 26px;
+    border-radius: 4px;
+    border: 2px solid var(--color-gold);
+    background-color: var(--color-black);
+    color: var(--color-gold);
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.nav-link .icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 2px solid var(--color-gold);
+    display: inline-block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+/* ==========================================
+   4. FOOTER
+   ========================================== */
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--color-black);
+    color: var(--color-gold);
+    text-align: center;
+    border-top: 3px solid var(--color-gold);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+footer a {
+    color: var(--color-gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+.footer-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 2px solid var(--color-gold);
+    display: inline-block;
+}
+
+/* ==========================================
+   5. HOMEPAGE STYLES
+   ========================================== */
+
+.hero {
+    background-image: url('Images/dnd2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #8B7355;
+    height: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    border: 3px solid var(--color-gold);
+    border-top: none;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-logo {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+    border: 3px solid var(--color-gold);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.hero-text {
+    color: var(--color-white);
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    max-width: 500px;
+}
+
+.featured-section {
+    background-color: var(--color-emerald);
+    padding: 60px 20px;
+    border: 3px solid var(--color-gold);
+    border-top: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: var(--color-dark-gray);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    border: 3px solid var(--color-gold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-gold);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background-color: var(--color-light-gray);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border: 2px solid #444;
+}
+
+.product-price {
+    font-size: 18px;
+    color: var(--color-gold);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.featured-heading {
+    text-align: center;
+    color: var(--color-gold);
+    font-size: 42px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ==========================================
+   6. PRODUCTS PAGE STYLES
+   ========================================== */
+
+.page-row {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 175px;
+    margin: 40px auto;
+    width: max-content;
+    padding-top: 25px;
+}
+
+.sidebar {
+    border: 5px solid gold;
+    width: 25%;
+    max-width: 314px;
+    height: 779px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url("Images/fantasy-castle.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    border: 5px solid gold;
+    height: auto;
+    width: 70%;
+    max-width: 964px;
+    column-gap: 0.5em;
+    row-gap: 0.5em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    background-color: var(--color-emerald);
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 224px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: grey;
+    border: 5px solid gold;
+}
+
+.productname {
+    font-weight: bold;
+}
+
+.productimage {
+    width: 120px;
+    height: 100px;
+    background-color: lightgray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.productprice {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.searchbar {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid gold;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.filters {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   7. ABOUT US PAGE STYLES
+   ========================================== */
+
+.hero-banner {
+    width: 100%;
+    border-top: 3px solid var(--color-gold);
+    border-bottom: 3px solid var(--color-gold);
+    background-image: url("images/about-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px 60px;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 28px;
+    border: 3px solid var(--color-gold);
+    max-width: 520px;
+}
+
+.hero-title {
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+.hero-image-box {
+    position: absolute;
+    top: 18px;
+    right: 40px;
+    border: 3px solid var(--color-gold);
+    padding: 4px;
+    background-color: var(--color-black);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.hero-image-box img {
+    display: block;
+    max-width: 220px;
+    height: auto;
+}
+
+.about-wrapper {
+    width: 100%;
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-inner {
+    width: 80%;
+    max-width: 1300px;
+    min-height: 420px;
+    background-color: var(--color-teal);
+    border: 4px solid var(--color-gold);
+    padding: 40px 40px 30px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+}
+
+.section-label {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.about-heading {
+    font-size: 26px;
+    margin-bottom: 14px;
+    color: var(--color-gold);
+}
+
+.about-text {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    color: var(--color-white);
+}
+
+.about-highlight {
+    font-weight: bold;
+    color: var(--color-gold);
+}
+
+.side-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    background-color: #111111;
+    border: 3px solid var(--color-gold);
+    padding: 16px 16px 14px;
+    color: var(--color-white);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--color-gold);
+    text-align: center;
+}
+
+.card-text {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card-list {
+    list-style: none;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.card-list li {
+    margin-bottom: 4px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.stat-label {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+/* ==========================================
+   8. FORM STYLES (add_product.php, etc.)
+   ========================================== */
+
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--color-emerald);
+    border: 4px solid var(--color-gold);
+    border-radius: 8px;
+}
+
+.form-container h1 {
+    color: var(--color-gold);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--color-gold);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-gold);
+    border-radius: 4px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #FFA500;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ==========================================
+   9. UTILITY CLASSES
+   ========================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+
+.add-button:hover {
+    background-color: #FFA500;
+    text-decoration: none;
+}
+
+/* ==========================================
+   10. RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+@media screen and (max-width: 900px) {
+    .about-inner {
+        width: 92%;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-banner {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-image-box {
+        top: 14px;
+        right: 14px;
+        max-width: 36%;
+    }
+
+    .hero-image-box img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        padding: 5px 18px;
+    }
+
+    .nav-link .icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    footer {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+
+    footer a {
+        font-size: 12px;
+    }
+
+    .hero {
+        height: 350px;
+        padding: 20px;
+    }
+
+    .hero-text {
+        font-size: 32px;
+    }
+
+    .hero-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-content {
+        gap: 15px;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .featured-heading {
+        font-size: 32px;
+    }
+
+    /* Products page responsive */
+    .page-row {
+        flex-direction: column;
+        align-items: center;
+        column-gap: 0;
+        width: 100%;
+    }
+
+    .sidebar,
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .box {
+        width: 45%;
+        height: auto;
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        padding: 4px 12px;
+    }
+
+    footer {
+        gap: 15px;
+    }
+
+    .hero-text {
+        font-size: 24px;
+    }
+
+    .hero-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hero-content {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .featured-heading {
+        font-size: 28px;
+    }
+}
