@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link rel="stylesheet" href="shared-nav-footer.css">
+	
+    <title>Premium Dice for Gamers - Home</title>
+    <style type="text/css">
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('dnd2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #8B7355;
+            height: 500px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px;
+            border: 3px solid #FFD700;
+            border-top: none;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+            border: 3px solid #FFD700;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        .hero-text {
+            color: #FFF;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            max-width: 500px;
+        }
+
+        /* Featured Products */
+        .featured-section {
+            background-color: #1a5c54;
+            padding: 60px 20px;
+            border: 3px solid #FFD700;
+            border-top: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            border: 3px solid #FFD700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.4), inset 0 0 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #2a2a2a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border: 2px solid #444;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #FFD700;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .featured-heading {
+            text-align: center;
+            color: #FFD700;
+            font-size: 42px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Responsiveness */
+        @media screen and (max-width: 768px) {
+
+            .hero {
+                height: 350px;
+                padding: 20px;
+            }
+
+            .hero-text {
+                font-size: 32px;
+            }
+
+            .hero-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .hero-content {
+                gap: 15px;
+            }
+
+            .product-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+
+            .featured-heading {
+                font-size: 32px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-text {
+                font-size: 24px;
+            }
+
+            .hero-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .hero-content {
+                gap: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .featured-heading {
+                font-size: 28px;
+            }
+        }
+    </style>
+	
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="navbar-wrapper">
+		<nav class="navbar">
+			<a href="homepage.html" class="nav-link active">
+				<span class="icon"></span> Home
+			</a>
+			<a href="Product-Page.html" class="nav-link">
+				<span class="icon"></span> Products
+			</a>
+			<a href="about_us.html" class="nav-link">
+				<span class="icon"></span> About Us
+			</a>
+		</nav>
+	</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="dice-logo.png" alt="Premium Dice Logo" class="hero-logo" />
+            <h1 class="hero-text">Premium Dice for Gamers</h1>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-section">
+        <div class="product-grid">
+            <article class="product-card">
+                <h3>Product 1</h3>
+                <div class="product-image" role="img">
+                    [Image]
+                </div>
+                <p class="product-price">Price</p>
+            </article>
+
+            <article class="product-card">
+                <h3>Product 2</h3>
+                <div class="product-image" role="img">
+                    [Image]
+                </div>
+                <p class="product-price">Price</p>
+            </article>
+
+            <article class="product-card">
+                <h3>Product 3</h3>
+                <div class="product-image" role="img">
+                    [Image]
+                </div>
+                <p class="product-price">Price</p>
+            </article>
+        </div>
+
+        <h2 class="featured-heading">Featured Products</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+		<a href="#"><span class="footer-icon"></span> Contact Us</a>
+		<a href="#"><span class="footer-icon"></span> Watch Us Make Dice!</a>
+		<a href="#"><span class="footer-icon"></span> Social Media</a>
+	</footer>
+	
+</body>
+
+</html>

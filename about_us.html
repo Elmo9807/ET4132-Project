@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Premium Dice for Gamers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="shared-nav-footer.css">
+  <style>
+    /*  GLOBAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /*  NAVBAR (MATCHES OTHER PAGES)  */
+    .navbar-wrapper {
+      width: 100%;
+      border: 3px solid #ffd700;
+      background-color: #000000;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 6px 26px;
+      border-radius: 4px;
+      border: 2px solid #ffd700;
+      background-color: #000000;
+      color: #ffd700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .nav-link span.icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      border: 2px solid #ffd700;
+      display: inline-block;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: #ffd700;
+      color: #000000;
+    }
+
+    /*  HERO BANNER  */
+    .hero-banner {
+      width: 100%;
+      border-top: 3px solid #ffd700;
+      border-bottom: 3px solid #ffd700;
+      background-image: url("images/about-banner.jpg"); /* replace with your banner if needed */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      min-height: 260px;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px 60px;
+    }
+
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px 28px;
+      border: 3px solid #ffd700;
+      max-width: 520px;
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: #f0f0f0;
+    }
+
+    /* TOP-RIGHT HERO IMAGE  */
+    .hero-image-box {
+      position: absolute;
+      top: 18px;
+      right: 40px;
+      border: 3px solid #ffd700;
+      padding: 4px;
+      background-color: #000000;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-image-box img {
+      display: block;
+      max-width: 220px;
+      height: auto;
+    }
+
+    /* MAIN ABOUT WRAPPER  */
+    .about-wrapper {
+      width: 100%;
+      padding: 40px 0 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-inner {
+      width: 80%;
+      max-width: 1300px;
+      min-height: 420px;
+      background-color: #006666; /* teal like other page */
+      border: 4px solid #ffd700;
+      padding: 40px 40px 30px;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 40px;
+    }
+
+    /* LEFT COLUMN - STORY */
+    .section-label {
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .about-heading {
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: #ffd700;
+    }
+
+    .about-text {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .about-highlight {
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    /* RIGHT COLUMN CARDS + HIGHLIGHTS */
+    .side-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background-color: #111111;
+      border: 3px solid #ffd700;
+      padding: 16px 16px 14px;
+      color: #ffffff;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #ffd700;
+      text-align: center;
+    }
+
+    .card-text {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .card-list {
+      list-style: none;
+      margin-top: 6px;
+      font-size: 13px;
+    }
+
+    .card-list li {
+      margin-bottom: 4px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .stat-label {
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    /*  CTA STRIP  */
+    .cta-strip {
+      width: 100%;
+      padding: 18px 0 26px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cta-inner {
+      width: 80%;
+      max-width: 1300px;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      padding: 8px 24px;
+      border-radius: 4px;
+      border: 3px solid #ffd700;
+      background-color: #000000;
+      color: #ffd700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .cta-button span.icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      border: 2px solid #ffd700;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background-color: #ffd700;
+      color: #000000;
+    }
+
+    /* FOOTER */
+    footer {
+      width: 100%;
+      padding: 10px 0 14px;
+      background-color: #000000;
+      color: #ffd700;
+      text-align: center;
+      border-top: 3px solid #ffd700;
+      font-size: 11px;
+    }
+
+    /*  RESPONSIVE  */
+    @media (max-width: 900px) {
+      .about-inner {
+        width: 92%;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-banner {
+        padding: 20px;
+        align-items: center;
+      }
+
+      .hero-title {
+        font-size: 24px;
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+      }
+
+      .hero-image-box {
+        top: 14px;
+        right: 14px;
+        max-width: 36%;
+      }
+
+      .hero-image-box img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="navbar-wrapper">
+    <nav class="navbar">
+        <a href="homepage.html" class="nav-link">
+            <span class="icon"></span> Home
+        </a>
+        <a href="Product-Page.html" class="nav-link">
+            <span class="icon"></span> Products
+        </a>
+        <a href="about_us.html" class="nav-link">
+            <span class="icon"></span> About Us
+        </a>
+    </nav>
+</div>
+  
+  <section class="hero-banner">
+    <!-- Top-right dice tray image -->
+    <div class="hero-image-box">
+      <!-- Save your provided image as dice-tray.jpg (or update the src) in your project folder -->
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbm0OGu2yv7oPqtaeucP8s3gfMQRXLpsHH4g&s" alt="Premium dice tray with gaming dice">
+    </div>
+
+    <!-- Text overlay -->
+    <div class="hero-overlay">
+      <div class="hero-title">Forged for Legends at the Table</div>
+      <div class="hero-subtitle">
+        Premium dice crafted for gamers who want every roll to feel as epic as the stories they tell.
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section class="about-wrapper">
+    <div class="about-inner">
+
+      <!-- LEFT: STORY -->
+      <div>
+        <div class="section-label">About Us</div>
+        <h1 class="about-heading">From Casual Rolls to Crafted Relics</h1>
+
+        <p class="about-text">
+          What started as a hunt for better dice at our own game table quickly became a full-time obsession.
+          We were tired of flimsy plastic, chipped corners, and sets that felt more like toys than tools for heroes.
+          So we began designing our own: bold edges, clean faces, satisfying weight, and colors that look like
+          they were stolen from dragon hoards and arcane vaults.
+        </p>
+
+        <p class="about-text">
+          Every set we release is built with one goal:
+          <span class="about-highlight">make your roll feel important</span>.
+          We test for balance, consistency, and durability, and we only ship dice we would proudly use in our own campaigns.
+          Whether you are a first time adventurer or a forever GM, our dice are made to last thousands of sessions.
+        </p>
+
+        <p class="about-text">
+          We are a small team of gamers, artists, and makers, and we partner with local suppliers and trusted manufacturers
+          to keep quality high and gimmicks low. No mystery sludge, no surprise shortcuts, just honest components,
+          clean casting, and finishes that feel as premium as they look.
+        </p>
+      </div>
+
+      <!-- RIGHT: HIGHLIGHTS / VALUES -->
+      <div class="side-cards">
+
+        <div class="card">
+          <div class="card-title">Why Our Dice Stand Out</div>
+          <ul class="card-list">
+            <li>✔ Precision-molded and inspected by hand.</li>
+            <li>✔ Vivid fantasy-inspired designs that pop on the table.</li>
+            <li>✔ Options for metal, resin, stone, and themed sets.</li>
+            <li>✔ Packaged to arrive display-ready, not damaged.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Our Promise</div>
+          <div class="card-text">
+            If your dice arrive scratched, chipped, or off-center, we will make it right.
+            We care more about your next session than the next sale.
+          </div>
+          <ul class="card-list">
+            <li>✔ Honest photos and descriptions.</li>
+            <li>✔ Fast, responsive support from real humans.</li>
+            <li>✔ Hassle-free replacements on defective sets.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Stats at a Glance</div>
+          <div class="stat-row">
+            <span class="stat-label">Players Served:</span>
+            <span>10,000+ worldwide</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Return Rate:</span>
+            <span>&lt; 1% on defects</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Themed Sets:</span>
+            <span>Dozens of unique lines</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <a href="#"><span class="footer-icon"></span> Contact Us</a>
+    <a href="#"><span class="footer-icon"></span> Watch Us Make Dice!</a>
+    <a href="#"><span class="footer-icon"></span> Social Media</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.body{
+	background-color: black;
+}
+
+.page-row{
+	display: flex;
+	align-items: flex-start;
+	column-gap: 175px;
+	margin: 40px auto;
+	width: max-content;
+	padding-top: 25px;
+	
+}
+
+.sidebar{
+	border: 5px solid gold;
+	width:25%;
+	max-width: 314px;
+	height: 779px;
+	padding: 20px;
+	box-sizing: border-box;
+	background-image: url("fantasy-castle.jpg");
+	background-size: cover;
+    background-position: center;   	
+}
+.container{
+	display: flex;
+	border: 5px solid gold;
+	height: auto;
+	width: 70%;
+	max-width: 964px;
+	column-gap:0.5em;
+	row-gap:0.5em;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content:space-around;
+    background-color: #1a5c54;
+	box-sizing: border-box;
+	padding: 5px;
+	
+}
+	 
+
+
+.box{
+	display:flex;
+	flex-direction: column;
+	justify-content:space-between;
+	align-items:center;
+	width:200px;
+	height: 224px;
+	font-size: 1em;
+	text-align: center;
+	border-radius: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.productname{
+	font-weight: bold;
+}
+
+.productimage{
+	width:120px;
+	height:100px;
+	background-color: lightgray;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	font-size: 0.8em;
+}
+
+.productprice{
+	color:darkgreen;
+	font-weight: bold;
+}
+
+.searchbar{
+	width: 100%;
+	padding: 8px 10px;
+	border-radius: 6px;
+	border: 1px solid gold;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+.filters{
+	margin-top:20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 14px;
+}	
+#box1{
+	background-color: grey;
+	border: 5px solid gold;
+}	
+@media (max-width:768px){
+	
+.page-row{
+	flex-direction: column;
+	align-items: center;
+	column-gap: 0;
+	width: 100%;
+}	
+
+.sidebar, .container{
+	width:90%;
+	height:auto;
+	
+}
+
+.box{
+	width:45%;
+	height:auto;
+	margin-bottom: 1em;
+}
+
+}
+
+
