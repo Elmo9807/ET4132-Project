@@ -29,7 +29,7 @@ Web application for fantasy-themed dice manufacturing company with MySQL databas
 3. **Import the database**
    - Open phpMyAdmin: http://localhost/phpmyadmin
    - Click "Import"
-   - Select `db_ET4132_GroupX.sql`
+   - Select `db_dicecompany.sql`
    - Click "Go"
 
 4. **Test it works**
