@@ -12,7 +12,7 @@ Web application for fantasy-themed dice manufacturing company with MySQL databas
 
 ### Prerequisites
 - XAMPP installed (Apache + MySQL)
-- Git installed
+- Git Bash installed
 
 ### Initial Setup
 
