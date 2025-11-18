@@ -39,18 +39,41 @@ Web application for fantasy-themed dice manufacturing company with MySQL databas
 ## Project Structure
 ```
 ET4132_Project/
-├── index.html              - Homepage
-├── unifiedstyles.css       - Shared stylesheet
-├── db_connect.php          - Database connection
-├── db_et4132_group1.sql    - Database dump
-├── images/                 - Image assets
+├──ET4132_Project/
+│
+├── index.html
+├── about_us.html
+├── view_products.php
+│
+├── admin_dashboard.php
+│
+├── add_product.php
+├── view_customers.php
+├── add_customer.php
+├── view_orders.php
+├── view_order_details.php
+├── update_order_status.php
+│
+├── unifiedsheet.css
+│
+├── db_connect.php
+├── db_et4132_group1.sql
+│
+├── README.md
+│
+└── Images/
+    ├── dicelogo.png
+    ├── dicelogo2.jpg
+    ├── dnd.png
+    ├── dnd2.jpg
+    └── fantasy-castle.jpg
 ```
 
 ## Daily Workflow
 
-### Before you start working:
+### Before you start working: [Gitbash]
 ```bash
-cd C:\xampp\htdocs\ET4132_Project
+cd C:/xampp/htdocs/ET4132_Project
 git pull origin main
 ```
 
