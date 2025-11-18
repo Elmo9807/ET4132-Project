@@ -4,8 +4,8 @@
     <title>Products - Fantasy Dice Company</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Productstyle.css">
-    <link rel="stylesheet" href="shared-nav-footer.css">
+    <link rel="stylesheet" href="unifiedsheet.css">
+
 </head>
 
 <body class="body">
@@ -21,6 +21,9 @@
         </a>
         <a href="about_us.html" class="nav-link">
             <span class="icon"></span> About Us
+        </a>
+        <a href="admin_dashboard.php" class="nav-link">
+            <span class="icon"></span> Admin
         </a>
     </nav>
 </div>
