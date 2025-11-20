@@ -30,47 +30,108 @@
 
 <div class="page-row">
     
-    <!-- Sidebar -->
+    <!-- Sidebar with Filters -->
     <div class="sidebar">
-        <input type="text" class="searchbar" placeholder="What are you looking for?">
+        <h3 style="color: #FFD700; text-align: center; margin-bottom: 15px;">Filter Products</h3>
         
-        <div class="filters">
-            <label><input type="checkbox"> In Stock</label><br>
-            <label><input type="checkbox"> On Sale</label><br>
-            <label><input type="checkbox"> Themed Dice</label><br>
-        </div>
+        <form method="GET" action="">
+            
+            <!-- Material Filter -->
+            <label style="color: #FFD700; font-weight: bold;">Material:</label>
+            <select name="material" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 2px solid #FFD700; border-radius: 4px; background: white;">
+                <option value="">All Materials</option>
+                <option value="Plastic" <?php if(isset($_GET['material']) && $_GET['material']=='Plastic') echo 'selected'; ?>>Plastic</option>
+                <option value="Metal" <?php if(isset($_GET['material']) && $_GET['material']=='Metal') echo 'selected'; ?>>Metal</option>
+                <option value="Wood" <?php if(isset($_GET['material']) && $_GET['material']=='Wood') echo 'selected'; ?>>Wood</option>
+                <option value="Resin" <?php if(isset($_GET['material']) && $_GET['material']=='Resin') echo 'selected'; ?>>Resin</option>
+            </select>
+            
+            <!-- Dice Type Filter -->
+            <label style="color: #FFD700; font-weight: bold;">Dice Type:</label>
+            <select name="dice_sides" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 2px solid #FFD700; border-radius: 4px; background: white;">
+                <option value="">All Types</option>
+                <option value="4" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='4') echo 'selected'; ?>>D4</option>
+                <option value="6" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='6') echo 'selected'; ?>>D6</option>
+                <option value="8" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='8') echo 'selected'; ?>>D8</option>
+                <option value="10" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='10') echo 'selected'; ?>>D10</option>
+                <option value="12" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='12') echo 'selected'; ?>>D12</option>
+                <option value="20" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='20') echo 'selected'; ?>>D20</option>
+            </select>
+            
+            <!-- Max Price Filter -->
+            <label style="color: #FFD700; font-weight: bold;">Max Price (€):</label>
+            <input type="number" 
+                   name="max_price" 
+                   step="0.01" 
+                   placeholder="20.00" 
+                   style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 2px solid #FFD700; border-radius: 4px;"
+                   value="<?php if(isset($_GET['max_price'])) echo $_GET['max_price']; ?>">
+            
+            <!-- Buttons -->
+            <button type="submit" 
+                    style="width: 100%; padding: 10px; background: #FFD700; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 10px;">
+                Apply Filters
+            </button>
+            
+            <a href="view_products.php" 
+               style="display: block; text-align: center; color: #FFD700; text-decoration: underline;">
+                Clear Filters
+            </a>
+        </form>
     </div>
     
     <!-- Product Grid [populated from DB] -->
     <div class="container">
         <?php
-        // Include database connection
+        // Connect to database
         include 'db_connect.php';
         
-        // Query to get products from database
+        // Start building SQL query
         $sql = "SELECT product_id, product_name, price, material, dice_sides, colour, stock_quantity 
                 FROM products 
-                ORDER BY product_name";
+                WHERE 1=1";
         
+        // Add filters if user selected them
+        if (isset($_GET['material']) && $_GET['material'] != '') {
+            $material = $_GET['material'];
+            $sql .= " AND material = '$material'";
+        }
+        
+        if (isset($_GET['dice_sides']) && $_GET['dice_sides'] != '') {
+            $dice_sides = $_GET['dice_sides'];
+            $sql .= " AND dice_sides = $dice_sides";
+        }
+        
+        if (isset($_GET['max_price']) && $_GET['max_price'] != '') {
+            $max_price = $_GET['max_price'];
+            $sql .= " AND price <= $max_price";
+        }
+        
+        $sql .= " ORDER BY product_name";
+        
+        // Run query
         $result = $conn->query($sql);
         
-        // Display each product
+        // Display products
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                echo '<div class="box" id="box1">';
-                echo '<div class="productname">' . htmlspecialchars($row['product_name']) . '</div>';
+                echo '<div class="box">';
+                
+                // Product Name
+                echo '<div class="productname">' . $row['product_name'] . '</div>';
+                
+                // Product Image - Same default image for all products
                 echo '<div class="productimage">';
-                echo '<div style="color: #666; font-size: 12px;">';
-                echo htmlspecialchars($row['material']) . '<br>';
-                echo 'D' . $row['dice_sides'] . '<br>';
-                echo $row['colour'];
+                echo '<img src="Images/products/default.png" alt="' . $row['product_name'] . '" style="width: 100%; height: 100%; object-fit: contain;">';
                 echo '</div>';
-                echo '</div>';
+                
+                // Price
                 echo '<div class="productprice">€' . number_format($row['price'], 2) . '</div>';
+                
                 echo '</div>';
             }
         } else {
-            echo '<p style="color: white;">No products available.</p>';
+            echo '<p style="color: white; text-align: center; width: 100%; padding: 40px;">No products found matching your filters.</p>';
         }
         
         $conn->close();

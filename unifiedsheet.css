@@ -271,17 +271,17 @@ footer a:hover {
 .page-row {
     display: flex;
     align-items: flex-start;
-    column-gap: 175px;
+    gap: 30px;
     margin: 40px auto;
-    width: max-content;
-    padding-top: 25px;
+    justify-content: center;
+    padding: 25px 20px;
+    max-width: 1400px;
 }
 
 .sidebar {
     border: 5px solid gold;
-    width: 25%;
-    max-width: 314px;
-    height: 779px;
+    width: 314px;
+    min-height: 400px;
     padding: 20px;
     box-sizing: border-box;
     background-image: url("Images/fantasy-castle.jpg");
@@ -291,18 +291,14 @@ footer a:hover {
 
 .container {
     display: flex;
-    border: 5px solid gold;
-    height: auto;
-    width: 70%;
-    max-width: 964px;
-    column-gap: 0.5em;
-    row-gap: 0.5em;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
+    gap: 10px;
+    border: 5px solid gold;
+    width: fit-content;
+    max-width: 870px;
     background-color: var(--color-emerald);
     box-sizing: border-box;
-    padding: 5px;
+    padding: 10px;
 }
 
 .box {
@@ -311,13 +307,16 @@ footer a:hover {
     justify-content: space-between;
     align-items: center;
     width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    flex-shrink: 0;
     height: 224px;
     font-size: 1em;
     text-align: center;
     border-radius: 15px;
     padding: 10px;
     box-sizing: border-box;
-    background-color: grey;
+    background-color: black;
     border: 5px solid gold;
 }
 
@@ -615,6 +614,7 @@ footer a:hover {
    10. RESPONSIVE MEDIA QUERIES
    ========================================== */
 
+/* About Us Page - Tablet */
 @media screen and (max-width: 900px) {
     .about-inner {
         width: 92%;
@@ -645,7 +645,20 @@ footer a:hover {
     }
 }
 
+/* Products Page - Tablet (3 boxes across) */
+@media screen and (max-width: 1024px) {
+    .page-row {
+        gap: 20px;
+    }
+    
+    .container {
+        max-width: 650px;  /* 3 boxes across */
+    }
+}
+
+/* General - Mobile Navigation & Homepage */
 @media screen and (max-width: 768px) {
+    /* Navigation */
     .navbar {
         gap: 20px;
         flex-wrap: wrap;
@@ -662,6 +675,7 @@ footer a:hover {
         height: 12px;
     }
 
+    /* Footer */
     footer {
         gap: 20px;
         padding: 15px 10px;
@@ -671,6 +685,7 @@ footer a:hover {
         font-size: 12px;
     }
 
+    /* Homepage Hero */
     .hero {
         height: 350px;
         padding: 20px;
@@ -689,6 +704,7 @@ footer a:hover {
         gap: 15px;
     }
 
+    /* Homepage Products */
     .product-grid {
         flex-direction: column;
         align-items: center;
@@ -703,27 +719,35 @@ footer a:hover {
         font-size: 32px;
     }
 
-    /* Products page responsive */
+    /* Products Page - Stack sidebar on top */
     .page-row {
         flex-direction: column;
         align-items: center;
-        column-gap: 0;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .sidebar {
         width: 100%;
+        max-width: 500px;
+        min-height: auto;
     }
-
-    .sidebar,
+    
     .container {
-        width: 90%;
-        height: auto;
-    }
-
-    .box {
-        width: 45%;
-        height: auto;
-        margin-bottom: 1em;
+        width: 100%;
+        max-width: 650px;  /* 3 boxes on tablet */
+        justify-content: center;
     }
 }
 
+/* Products Page - Small Mobile (2 boxes across) */
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 440px;  /* 2 boxes across */
+    }
+}
+
+/* Very Small Mobile */
 @media screen and (max-width: 480px) {
     .navbar {
         gap: 10px;
@@ -755,5 +779,10 @@ footer a:hover {
 
     .featured-heading {
         font-size: 28px;
+    }
+    
+    /* Products Page - 1 box across on very small screens */
+    .container {
+        max-width: 220px;  /* Single column */
     }
 }
