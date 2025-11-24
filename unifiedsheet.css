@@ -150,11 +150,11 @@ footer a:hover {
    ========================================== */
 
 .hero {
-    background-image: url('Images/dnd2.jpg');
+    background-image: url('Images/fantasy.jpg');
     background-size: cover;
     background-position: center;
     background-color: #8B7355;
-    height: 500px;
+    height: 400px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
