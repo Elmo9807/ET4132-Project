@@ -22,6 +22,9 @@
         <a href="about_us.html" class="nav-link">
             <span class="icon"></span> About Us
         </a>
+		<a href="register.php" class="nav-link">
+            <span class="icon"></span> Register
+        </a>
         <a href="admin_dashboard.php" class="nav-link">
             <span class="icon"></span> Admin
         </a>
@@ -83,10 +86,10 @@
     <!-- Product Grid [populated from DB] -->
     <div class="container">
         <?php
-        // Connect to database
+        // Connect to DB
         include 'db_connect.php';
         
-        // Start building SQL query
+        // SQL query
         $sql = "SELECT product_id, product_name, price, material, dice_sides, colour, stock_quantity 
                 FROM products 
                 WHERE 1=1";
@@ -109,7 +112,6 @@
         
         $sql .= " ORDER BY product_name";
         
-        // Run query
         $result = $conn->query($sql);
         
         // Display products

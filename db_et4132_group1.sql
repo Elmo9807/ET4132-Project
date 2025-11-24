@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2025 at 07:29 PM
+-- Generation Time: Nov 24, 2025 at 05:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `customers`
 --
 
-DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `customer_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -54,7 +53,6 @@ INSERT INTO `customers` (`customer_id`, `first_name`, `last_name`, `email`, `pho
 -- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -83,7 +81,6 @@ INSERT INTO `orders` (`order_id`, `customer_id`, `order_date`, `total_amount`, `
 -- Table structure for table `order_items`
 --
 
-DROP TABLE IF EXISTS `order_items`;
 CREATE TABLE `order_items` (
   `order_item_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -116,7 +113,6 @@ INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `quantity`
 -- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(20) NOT NULL,
@@ -125,24 +121,25 @@ CREATE TABLE `products` (
   `material` varchar(20) DEFAULT NULL,
   `dice_sides` int(11) NOT NULL,
   `colour` varchar(20) DEFAULT NULL,
-  `stock_quantity` int(11) DEFAULT 0
+  `stock_quantity` int(11) DEFAULT 0,
+  `image_filename` varchar(100) DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `material`, `dice_sides`, `colour`, `stock_quantity`) VALUES
-(1, 'Standard D6', 'Classic 6-sided gaming die', 2.99, 'Plastic', 6, 'Red', 500),
-(2, 'Metal D20', 'Premium metal 20-sided die for RPGs', 12.99, 'Metal', 20, 'Silver', 150),
-(3, 'Wooden D6 Set', 'Handcrafted wooden dice set (5 dice)', 15.99, 'Wood', 6, 'Natural', 75),
-(4, 'Glow D10', 'Glow-in-the-dark 10-sided die', 5.99, 'Plastic', 10, 'Green', 200),
-(5, 'Crystal D12', 'Translucent crystal-effect 12-sided die', 8.99, 'Resin', 12, 'Blue', 120),
-(6, 'RPG Dice Set', 'Complete 7-dice polyhedral RPG set', 19.99, 'Plastic', 0, 'Mixed', 300),
-(7, 'Pearl D6', 'Pearlescent finish 6-sided die', 4.99, 'Plastic', 6, 'White', 250),
-(8, 'Bronze D8', 'Antique bronze 8-sided die', 9.99, 'Metal', 8, 'Bronze', 100),
-(9, 'Marble D4', 'Marble-effect 4-sided die', 3.99, 'Resin', 4, 'Black', 180),
-(10, 'Galaxy D20', 'Galaxy-swirl design 20-sided die', 11.99, 'Resin', 20, 'Purple', 90);
+INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `material`, `dice_sides`, `colour`, `stock_quantity`, `image_filename`) VALUES
+(1, 'Standard D6', 'Classic 6-sided gaming die', 2.99, 'Plastic', 6, 'Red', 500, 'default.png'),
+(2, 'Metal D20', 'Premium metal 20-sided die for RPGs', 12.99, 'Metal', 20, 'Silver', 150, 'default.png'),
+(3, 'Wooden D6 Set', 'Handcrafted wooden dice set (5 dice)', 15.99, 'Wood', 6, 'Natural', 75, 'default.png'),
+(4, 'Glow D10', 'Glow-in-the-dark 10-sided die', 5.99, 'Plastic', 10, 'Green', 200, 'default.png'),
+(5, 'Crystal D12', 'Translucent crystal-effect 12-sided die', 8.99, 'Resin', 12, 'Blue', 120, 'default.png'),
+(6, 'RPG Dice Set', 'Complete 7-dice polyhedral RPG set', 19.99, 'Plastic', 0, 'Mixed', 300, 'default.png'),
+(7, 'Pearl D6', 'Pearlescent finish 6-sided die', 4.99, 'Plastic', 6, 'White', 250, 'default.png'),
+(8, 'Bronze D8', 'Antique bronze 8-sided die', 9.99, 'Metal', 8, 'Bronze', 100, 'default.png'),
+(9, 'Marble D4', 'Marble-effect 4-sided die', 3.99, 'Resin', 4, 'Black', 180, 'default.png'),
+(10, 'Galaxy D20', 'Galaxy-swirl design 20-sided die', 11.99, 'Resin', 20, 'Purple', 90, 'default.png');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +180,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
