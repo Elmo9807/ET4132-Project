@@ -62,7 +62,6 @@
             <p>Track and process customer orders</p>
             <div class="admin-links">
                 <a href="view_orders.php" class="admin-link">View All Orders</a>
-                <a href="view_order_details.php?order_id=1" class="admin-link">View Order Details (Sample)</a>
             </div>
         </div>
         

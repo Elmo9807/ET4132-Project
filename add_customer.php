@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input class="fantasy-input" type="text" name="phone">
 
             <label>Address:</label>
-            <input class="fantasy-textarea" type="text" name="address" rows="4"></textarea>
+            <textarea class="fantasy-textarea" name="address" rows="4"></textarea>
 
             <button type="submit" class="fantasy-button">Add Customer</button>
         </form>
