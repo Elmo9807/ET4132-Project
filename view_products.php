@@ -35,13 +35,13 @@
     
     <!-- Sidebar with Filters -->
     <div class="sidebar">
-        <h3 style="color: #FFD700; text-align: center; margin-bottom: 15px;">Filter Products</h3>
+        <h3>Filter Products</h3>
         
         <form method="GET" action="">
             
             <!-- Material Filter -->
-            <label style="color: #FFD700; font-weight: bold;">Material:</label>
-            <select name="material" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 2px solid #FFD700; border-radius: 4px; background: white;">
+            <label>Material:</label>
+            <select name="material">
                 <option value="">All Materials</option>
                 <option value="Plastic" <?php if(isset($_GET['material']) && $_GET['material']=='Plastic') echo 'selected'; ?>>Plastic</option>
                 <option value="Metal" <?php if(isset($_GET['material']) && $_GET['material']=='Metal') echo 'selected'; ?>>Metal</option>
@@ -50,8 +50,8 @@
             </select>
             
             <!-- Dice Type Filter -->
-            <label style="color: #FFD700; font-weight: bold;">Dice Type:</label>
-            <select name="dice_sides" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 2px solid #FFD700; border-radius: 4px; background: white;">
+            <label>Dice Type:</label>
+            <select name="dice_sides">
                 <option value="">All Types</option>
                 <option value="4" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='4') echo 'selected'; ?>>D4</option>
                 <option value="6" <?php if(isset($_GET['dice_sides']) && $_GET['dice_sides']=='6') echo 'selected'; ?>>D6</option>
@@ -62,24 +62,17 @@
             </select>
             
             <!-- Max Price Filter -->
-            <label style="color: #FFD700; font-weight: bold;">Max Price (€):</label>
+            <label>Max Price (€):</label>
             <input type="number" 
                    name="max_price" 
                    step="0.01" 
-                   placeholder="20.00" 
-                   style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 2px solid #FFD700; border-radius: 4px;"
+                   placeholder="20.00"
                    value="<?php if(isset($_GET['max_price'])) echo $_GET['max_price']; ?>">
             
             <!-- Buttons -->
-            <button type="submit" 
-                    style="width: 100%; padding: 10px; background: #FFD700; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 10px;">
-                Apply Filters
-            </button>
+            <button type="submit">Apply Filters</button>
             
-            <a href="view_products.php" 
-               style="display: block; text-align: center; color: #FFD700; text-decoration: underline;">
-                Clear Filters
-            </a>
+            <a href="view_products.php">Clear Filters</a>
         </form>
     </div>
     
@@ -124,7 +117,7 @@
                 
                 // Product Image - Same default image for all products
                 echo '<div class="productimage">';
-                echo '<img src="Images/products/default.png" alt="' . $row['product_name'] . '" style="width: 100%; height: 100%; object-fit: contain;">';
+                echo '<img src="Images/products/default.png" alt="' . $row['product_name'] . '">';
                 echo '</div>';
                 
                 // Price
@@ -133,7 +126,7 @@
                 echo '</div>';
             }
         } else {
-            echo '<p style="color: white; text-align: center; width: 100%; padding: 40px;">No products found matching your filters.</p>';
+            echo '<p class="no-products">No products found matching your filters.</p>';
         }
         
         $conn->close();

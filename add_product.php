@@ -15,7 +15,6 @@ function modifydata($input)
 }
 
 //Retrieve data from the form, check required fields are filled and insert data into variable
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Required fields
@@ -76,7 +75,7 @@ mysqli_close($conn);
         <h1>Forge your die!</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
 
-            <p class="required-note">* required field</span></p><br>
+            <p class="required-note">* required field</p><br>
             <div class="form-group">
                 <label>Product Name: <span>*</span></label>
                 <input type="text" name="name" value="<?php echo $product_name; ?>">
