@@ -504,7 +504,349 @@ footer a:hover {
 }
 
 /* ==========================================
-   8. FORM STYLES (add_product.php, etc.)
+   8. CUSTOMER PAGES STYLES
+   ========================================== */
+
+/* Centers the main card on the page */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Main teal+gold card (like orders page) */
+.fantasy-card {
+    background-color: #0b5c5c;
+    border: 4px solid #f0c419;
+    border-radius: 10px;
+    padding: 30px;
+    width: 850px;
+    max-width: 90%;
+    color: #f0c419;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(240, 196, 25, 0.3);
+}
+
+.fantasy-card h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #f0c419;
+}
+
+/* Table on view_customers.php */
+.fantasy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #0a4a4a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fantasy-table th {
+    padding: 12px;
+    color: #f0c419;
+    font-size: 18px;
+}
+
+.fantasy-table td {
+    padding: 10px;
+    color: #ffffff;
+    border-bottom: 1px solid #f0c419;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Inputs on add_customer.php */
+.fantasy-input,
+.fantasy-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Form labels in fantasy-card */
+.fantasy-card label {
+    display: block;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Success/info message in fantasy-card */
+.fantasy-card .message {
+    color: #ffe066;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* Gold button (Add New / Submit) */
+.fantasy-button {
+    display: inline-block;
+    background-color: #f0c419;
+    color: #000;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fantasy-button:hover {
+    background-color: #ffe066;
+}
+
+/* Links under the card (Return to dashboard / list) */
+.return-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #f0c419;
+    text-align: center;
+    text-decoration: none;
+}
+
+.return-link:hover {
+    text-decoration: underline;
+}
+
+/* Simple nav for customer pages */
+.simple-nav {
+    background: #222;
+    padding: 12px;
+    text-align: left;
+}
+
+.simple-nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.simple-nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   9. ORDERS PAGE STYLES
+   ========================================== */
+
+.orders-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #006666;
+    border: 4px solid #FFD700;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.orders-container h1 {
+    color: #FFD700;
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.orders-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a5c54;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.orders-container th {
+    background-color: #145a32;
+    padding: 12px;
+    border-bottom: 2px solid #FFD700;
+    font-size: 18px;
+}
+
+.orders-container td {
+    padding: 12px;
+    border-bottom: 1px solid #FFD700;
+    font-size: 16px;
+}
+
+.orders-container tr:hover {
+    background-color: #1b8a6b;
+}
+
+/* Status badges */
+.status-pending {
+    background-color: #ffeb3b;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.status-processing {
+    background-color: #03a9f4;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.status-shipped {
+    background-color: #9c27b0;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.status-delivered {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.orders-container .return {
+    color: #FFD700;
+    font-size: 30px;
+}
+
+/* ==========================================
+   10. ADMIN DASHBOARD STYLES
+   ========================================== */
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    color: #FFD700;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+    color: #FFD700;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.admin-section {
+    background-color: #1a5c54;
+    border: 4px solid #FFD700;
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.4);
+}
+
+.admin-section h2 {
+    color: #FFD700;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+}
+
+.admin-section p {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-link {
+    display: block;
+    padding: 12px 20px;
+    background-color: #000000;
+    color: #FFD700;
+    text-decoration: none;
+    border: 2px solid #FFD700;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.admin-link:hover {
+    background-color: #FFD700;
+    color: #000000;
+    text-decoration: none;
+}
+
+.admin-link.primary {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+.admin-link.primary:hover {
+    background-color: #FFA500;
+}
+
+.section-icon {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-link a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   11. FORM STYLES (add_product.php, etc.)
    ========================================== */
 
 .form-container {
@@ -585,8 +927,34 @@ footer a:hover {
     text-align: center;
 }
 
+.error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+.success {
+    color: greenyellow;
+    font-size: 14px;
+    text-align: center;
+}
+
+.return {
+    color: var(--color-gold);
+    font-size: 30px;
+}
+
+.return a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.return a:hover {
+    text-decoration: underline;
+}
+
 /* ==========================================
-   9. UTILITY CLASSES
+   12. UTILITY CLASSES
    ========================================== */
 
 .text-center {
@@ -611,7 +979,7 @@ footer a:hover {
 }
 
 /* ==========================================
-   10. RESPONSIVE MEDIA QUERIES
+   13. RESPONSIVE MEDIA QUERIES
    ========================================== */
 
 /* About Us Page - Tablet */

@@ -29,37 +29,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<nav style="background:#222; padding:12px;">
-    <a href="index.html" style="color:white; margin-right:20px;">Home</a>
-    <a href="admin_dashboard.php" style="color:white; margin-right:20px;">Admin Dashboard</a>
+<nav class="simple-nav">
+    <a href="index.html">Home</a>
+    <a href="admin_dashboard.php">Admin Dashboard</a>
 </nav>
 
-<h2>Add New Customer</h2>
+<div class="page-wrapper">
+    <div class="fantasy-card">
+        <h2>Add New Customer</h2>
 
-<?php if ($message != "") echo "<p><strong>$message</strong></p>"; ?>
+        <?php if ($message != ""): ?>
+            <p class="message"><?php echo $message; ?></p>
+        <?php endif; ?>
 
-<form action="" method="POST">
+        <form action="" method="POST">
 
-    <label>First Name:</label><br>
-    <input type="text" name="first_name" required><br><br>
+            <label>First Name:</label>
+            <input class="fantasy-input" type="text" name="first_name" required>
 
-    <label>Last Name:</label><br>
-    <input type="text" name="last_name" required><br><br>
+            <label>Last Name:</label>
+            <input class="fantasy-input" type="text" name="last_name" required>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+            <label>Email:</label>
+            <input class="fantasy-input" type="email" name="email" required>
 
-    <label>Phone:</label><br>
-    <input type="text" name="phone"><br><br>
+            <label>Phone:</label>
+            <input class="fantasy-input" type="text" name="phone">
 
-    <label>Address:</label><br>
-    <textarea name="address" rows="4"></textarea><br><br>
+            <label>Address:</label>
+            <input class="fantasy-textarea" type="text" name="address" rows="4"></textarea>
 
-    <button type="submit">Add Customer</button>
-</form>
+            <button type="submit" class="fantasy-button">Add Customer</button>
+        </form>
 
-<br>
-<a href="view_customers.php">Back to Customers</a>
+        <a class="return-link" href="view_customers.php">Back to Customers</a>
+    </div>
+</div>
 
 </body>
 </html>

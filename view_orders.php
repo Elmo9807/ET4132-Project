@@ -17,107 +17,8 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="unifiedsheet.css">
-    <title>Document</title>
-     <style>
-
-        body {
-        background-color: #000; 
-        font-family: Arial, sans-serif;
-        color: #FFD700; 
-    }
-
-    .orders-container {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 30px;
-        background-color: #006666; 
-        border: 4px solid #FFD700;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .orders-container h1 {
-        color: #FFD700;
-        margin-bottom: 25px;
-        font-size: 32px;
-        font-weight: bold;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #1a5c54; 
-        color: #FFD700; 
-        border: 2px solid #FFD700;
-        border-radius: 8px;
-        overflow: hidden;
-      
-    }
-
-    th {
-        background-color: #145a32; 
-        padding: 12px;
-        border-bottom: 2px solid #FFD700;
-        font-size: 18px;
-    }
-
-    td {
-        padding: 12px;
-        border-bottom: 1px solid #FFD700;
-        font-size: 16px;
-    }
-
-
-
-    tr:hover {
-        background-color: #1b8a6b; 
-    }
-
-    
-    .status-pending {
-        background-color: #ffeb3b;
-        color: black;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-        display: inline-block;
-    }
-
-    .status-processing {
-        background-color: #03a9f4;
-        color: white;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-        display: inline-block;
-    }
-
-    .status-shipped {
-        background-color: #9c27b0;
-        color: white;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-        display: inline-block;
-    }
-
-    .status-delivered {
-        background-color: #4caf50;
-        color: white;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-        display: inline-block;
-    }
-
-    
-
-       </style>
-
-   
-
-
+    <link rel="stylesheet" href="unifiedsheet.css">
+    <title>View Orders</title>
 </head>
 <body>
 
@@ -150,7 +51,7 @@ $result = mysqli_query($conn, $sql);
 
 </table>
 <br>
- <span class="return"><a href="admin_dashboard.php" style="color:#FFD700; font-size: 30px;">&#8678 Return to the dashboard</a></span>
+ <span class="return"><a href="admin_dashboard.php">&#8678; Return to the dashboard</a></span>
      </div>
 
 </body>

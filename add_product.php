@@ -14,9 +14,8 @@ function modifydata($input)
     return $input;
 }
 
-/*Retrieve data from the form, check required fields are filled
-    and insert data into variables
-    */
+//Retrieve data from the form, check required fields are filled and insert data into variable
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Required fields
@@ -67,22 +66,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="unifiedsheet.css">
-    <title>Document</title>
-    <style>
-        .error{
-            color:red;
-            font-size: 14px;
-            text-align:center;
-            
-        }
-
-        .return{
-            color:var(--color-gold);
-            font-size: 30px;
-        }
-
-     
-    </style>
+    <title>Add Product - Fantasy Dice Company</title>
 </head>
 
 <body>
@@ -135,13 +119,13 @@ mysqli_close($conn);
             <div class="error">
                 <?php echo $GenError; ?>
             </div>
-            <div style="color:greenyellow; font-size: 14px; text-align:center;">
+            <div class="success">
                 <?php echo $successMessage; ?>
             </div>
 
         </form>
        <br><br>
-       <span class="return"><a href="admin_dashboard.php">&#8678 Return to the dashboard</a></span>
+       <span class="return"><a href="admin_dashboard.php">&#8678; Return to the dashboard</a></span>
 
 
     </div>
