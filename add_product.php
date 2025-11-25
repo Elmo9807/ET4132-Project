@@ -76,7 +76,7 @@ mysqli_close($conn);
         <h1>Forge your die!</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
 
-            <p><span style="color:var(--color-gold)">* required field</span></p><br>
+            <p class="required-note">* required field</span></p><br>
             <div class="form-group">
                 <label>Product Name: <span>*</span></label>
                 <input type="text" name="name" value="<?php echo $product_name; ?>">
@@ -129,12 +129,6 @@ mysqli_close($conn);
 
 
     </div>
-
-   
-
-
-
-
 
 </body>
 
